@@ -1,0 +1,37 @@
+title: Aarhus AI Docs
+
+# Theme
+remote_theme: just-the-docs/just-the-docs
+
+# Plugins
+plugins:
+  - jekyll-remote-theme
+
+# Configure callouts for Just-the-docs theme
+# https://just-the-docs.com/docs/configuration/#callouts
+# Common kinds of callouts include highlight, important, new, note, and warning.
+# https://just-the-docs.com/docs/ui-components/callouts/
+callouts:
+  note:
+    title: Note
+    color: purple
+  note-title:
+    color: purple
+  warning:
+    title: Warning
+    color: yellow
+  warning-title:
+    color: yellow
+  danger:
+    title: Danger
+    color: red
+  danger-title:
+    color: red
+  important:
+    title: Important
+    color: blue
+  important-title:
+    color: blue
+
+# Makes Aux links open in a new tab. Default is false
+aux_links_new_tab: true

@@ -1,6 +1,6 @@
 ---
 title: Rettigheder - slutbruger
-parent: User
+parent: Slutbruger
 ---
 
 # {{ page.title }}

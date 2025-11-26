@@ -1,6 +1,6 @@
 ---
 title: Arkitektur tegning
-parent: Hvor finder jeg
+parent: Teknisk Dokumentation
 ---
 
 # {{ page.title }}

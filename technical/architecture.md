@@ -8,4 +8,3 @@ parent: Technical documentation
 <img width="100%" alt="Arkitektur" src="images/kubernetes.png" />
 
 <img width="100%" alt="Arkitektur" src="images/architecture.png" />
-

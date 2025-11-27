@@ -9,7 +9,7 @@ nav_order: 4
 
 Only for internal SSO.
 
-### ArgoCD
+## ArgoCD
 
 argo-cd/templates/sealed-oidc-authentik-client-secret.yaml
 
@@ -48,7 +48,7 @@ global:
         requestedScopes: [openid, profile, email, groups]
 ```
 
-### Grafana/Prometheus
+## Grafana/Prometheus
 
 prometheus-stack/templates/sealed-auth-generic-oauth-secret.yaml
 

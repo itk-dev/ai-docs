@@ -1,6 +1,6 @@
 ---
 title: Arkitektur tegning
-parent: Teknisk Dokumentation
+parent: Technical documentation
 ---
 
 # Arkitektur tegning

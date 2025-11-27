@@ -1,7 +1,8 @@
 ---
 title: Backup
-parent: Technical documentation
+parent: Installation
 has_children: false
+nav_order: 3
 ---
 
 # Backup

@@ -1,7 +1,8 @@
 ---
 title: Kubernetes
-parent: Technical documentation
+parent: Installation
 has_children: false
+nav_order: 1
 ---
 
 # Kubernetes

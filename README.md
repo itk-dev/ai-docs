@@ -1,5 +1,17 @@
 # AI-docs
 
+## The pages
+
+It can be accessed at [https://aarhusai.github.io/documentation/](https://aarhusai.github.io/documentation/).
+
+All the technical documentation has is in english and the end-user documentation is in danish.
+
+## How to contribute
+
+All contribution should be through pull requests and have to pass workflow actions and linting
+of the markdown files.
+
+
 ## Github pages for Docs
 
 We

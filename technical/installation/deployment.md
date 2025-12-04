@@ -163,8 +163,7 @@ You can place the unsealed secret anywhere you want, but this repository has the
 in `.gitignore`. So with this in mind, the `kubeseal` commands would be in the form:
 
 ```shell
-kubectl create -f local-secrets/<NAME_OF_APPLICATION>-secret.yaml --dry-run=client -o yaml | \ 
-kubeseal --cert public-cert.pem --format yaml > templates/sealed-<NAME_OF_APPLICATION>-secret.yaml
+kubectl create -f local-secrets/<NAME_OF_APPLICATION>-secret.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/sealed-<NAME_OF_APPLICATION>-secret.yaml
 ```
 
 With an unsealed secret like this (here for LiteLLM):
@@ -213,8 +212,7 @@ stringData:
 Seal it:
 
 ```shell
-kubectl create -f local-secrets/hf-secret.yaml --dry-run=client -o yaml | \
-kubeseal --cert public-cert.pem --format yaml > templates/sealed-hf-secret.yaml
+kubectl create -f local-secrets/hf-secret.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/sealed-hf-secret.yaml
 ```
 
 Next, create a secret for the vLLM API. This key is used internally in the cluster to communicate with the vLLM service,
@@ -235,8 +233,7 @@ stringData:
 Seal it:
 
 ```shell
-kubectl create -f local-secrets/vllm-secret.yaml --dry-run=client -o yaml | \
-kubeseal --cert public-cert.pem --format yaml > templates/sealed-vllm-secret.yaml
+kubectl create -f local-secrets/vllm-secret.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/sealed-vllm-secret.yaml
 ```
 
 Change `automated` to true in `applications/argo-cd-resources/values.yaml` for the `vllm` application. Add, commit, and
@@ -275,8 +272,7 @@ stringData:
 Seal it:
 
 ```shell
-kubectl create -f local-secrets/litellm-cloudnative-pg-secret.yaml --dry-run=client -o yaml | \
-kubeseal --cert public-cert.pem --format yaml > templates/sealed-cloudnative-pg-secret.yaml
+kubectl create -f local-secrets/litellm-cloudnative-pg-secret.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/sealed-cloudnative-pg-secret.yaml
 ```
 
 Next, we need to set a master key and API keys for the configured end-points. Create the file
@@ -298,8 +294,7 @@ stringData:
 Seal it:
 
 ```shell
-kubectl create -f local-secrets/litellm-secrets.yaml --dry-run=client -o yaml | \
-kubeseal --cert public-cert.pem --format yaml > templates/sealed-litellm-secrets.yaml
+kubectl create -f local-secrets/litellm-secrets.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/sealed-litellm-secrets.yaml
 ```
 
 **NOTE**: If you want to access the web UI, you need to edit `litellm-values.yaml` by enabling ingress and setting a domain
@@ -335,8 +330,7 @@ stringData:
 Seal it:
 
 ```shell
-kubectl create -f local-secrets/secrets.yaml --dry-run=client -o yaml | \
-kubeseal --cert public-cert.pem --format yaml > templates/sealed-secrets.yaml
+kubectl create -f local-secrets/secrets.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/sealed-secrets.yaml
 ```
 
 Change `automated` to true in `applications/argo-cd-resources/values.yaml` for the `doc-ingestion` application. Add,
@@ -373,8 +367,7 @@ stringData:
 Seal it:
 
 ```shell
-kubectl create -f local-secrets/searxng-secret.yaml --dry-run=client -o yaml | \
-kubeseal --cert public-cert.pem --format yaml > templates/sealed-searxng-secret.yaml
+kubectl create -f local-secrets/searxng-secret.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/sealed-searxng-secret.yaml
 ```
 
 Change `automated` to true in `applications/argo-cd-resources/values.yaml` for the `searxng` application. Add,
@@ -408,7 +401,11 @@ stringData:
   EXTERNAL_DOCUMENT_LOADER_API_KEY: <DOC INGESTION ROUTE>
 ```
 
-Skal denne ikke seales?
+Seal it:
+
+```shell
+kubectl create -f local-secrets/openwebui-secrets.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/sealed-openwebui-secrets.yaml
+```
 
 Create the file `local-secrets/cloudnative-pg-cluster-openwebui-secret.yaml`:
 
@@ -425,7 +422,9 @@ stringData:
   password: <GENERATED PASSWORD>
 ```
 
-Skal denne ikke seales?
+```shell
+kubectl create -f local-secrets/cloudnative-pg-cluster-openwebui-secret.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/cloudnative-pg-cluster-openwebui-secret.yaml
+```
 
 Change `automated` to true in `applications/argo-cd-resources/values.yaml` for the `openwebui` application. Add,
 commit, and push the changes to have Argo deploy automatically.

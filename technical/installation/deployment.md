@@ -422,6 +422,8 @@ stringData:
   password: <GENERATED PASSWORD>
 ```
 
+Seal it:
+
 ```shell
 kubectl create -f local-secrets/cloudnative-pg-cluster-openwebui-secret.yaml --dry-run=client -o yaml | kubeseal --cert public-cert.pem --format yaml > templates/cloudnative-pg-cluster-openwebui-secret.yaml
 ```
